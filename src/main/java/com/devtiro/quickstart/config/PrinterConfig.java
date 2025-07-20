@@ -26,6 +26,7 @@ public class PrinterConfig {
         return new SpanishBluePrinter();
     }
 
+    // this bean will be used by our main class' constructor. It uses our ColourPrinterImpl which prints the colours
     @Bean
     public ColourPrinter colourPrinter(RedPrinter redPrinter, GreenPrinter greenPrinter, BluePrinter bluePrinter) {
         return new ColourPrinterImpl(redPrinter, greenPrinter, bluePrinter);

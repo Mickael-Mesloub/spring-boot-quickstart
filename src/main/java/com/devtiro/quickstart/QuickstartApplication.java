@@ -1,7 +1,6 @@
 package com.devtiro.quickstart;
 
 import com.devtiro.quickstart.services.ColourPrinter;
-import com.devtiro.quickstart.services.impl.ColourPrinterImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,9 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class QuickstartApplication implements CommandLineRunner {
 	private ColourPrinter colourPrinter;
 
+	// the constructor of our application uses our new ColourPrinter bean
 	public QuickstartApplication(ColourPrinter colourPrinter) {
 		this.colourPrinter = colourPrinter;
 	}
+
 	// entry point of the application
 	public static void main(String[] args) {
 		SpringApplication.run(QuickstartApplication.class, args);
