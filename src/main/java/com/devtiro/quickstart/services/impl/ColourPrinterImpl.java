@@ -7,16 +7,16 @@ import com.devtiro.quickstart.services.RedPrinter;
 
 public class ColourPrinterImpl implements ColourPrinter {
     private RedPrinter redPrinter;
-    private BluePrinter bluePrinter;
     private GreenPrinter greenPrinter;
+    private BluePrinter bluePrinter;
 
-    public ColourPrinterImpl() {
-        this.bluePrinter = new EnglishBluePrinter();
-        this.greenPrinter = new EnglishGreenPrinter();
-        this.redPrinter = new EnglishRedPrinter();
+    public ColourPrinterImpl(RedPrinter redPrinter, GreenPrinter greenPrinter, BluePrinter bluePrinter) {
+        this.redPrinter = redPrinter;
+        this.greenPrinter = greenPrinter;
+        this.bluePrinter = bluePrinter;
     }
 
     @Override
     public String print() {
-        return String.join(", ", redPrinter.print(), bluePrinter.print(), greenPrinter.print());
+        return String.join(", ", redPrinter.print(), greenPrinter.print(), bluePrinter.print());
     }}

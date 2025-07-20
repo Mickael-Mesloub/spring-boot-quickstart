@@ -8,6 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class QuickstartApplication implements CommandLineRunner {
+	private ColourPrinter colourPrinter;
+
+	public QuickstartApplication(ColourPrinter colourPrinter) {
+		this.colourPrinter = colourPrinter;
+	}
 	// entry point of the application
 	public static void main(String[] args) {
 		SpringApplication.run(QuickstartApplication.class, args);
@@ -15,7 +20,6 @@ public class QuickstartApplication implements CommandLineRunner {
 
 	@Override
 	public void run(final String... args) {
-		final ColourPrinter colourPrinter = new ColourPrinterImpl();
 		System.out.println(colourPrinter.print());
 	}
 }
